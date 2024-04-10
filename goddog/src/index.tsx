@@ -2,12 +2,14 @@ import { serve } from "@hono/node-server";
 import { serveStatic } from "@hono/node-server/serve-static";
 import { Button, Frog, TextInput } from "frog";
 import { devtools } from "frog/dev";
+import { pinata } from "frog/hubs";
 // import { neynar } from 'frog/hubs'
 
 export const app = new Frog({
   basePath: "/goddog",
   // Supply a Hub to enable frame verification.
   // hub: neynar({ apiKey: 'NEYNAR_FROG_FM' })
+  hub: pinata(),
 });
 let currentSlide: number = 1;
 app.use("/*", serveStatic({ root: "./public" }));
