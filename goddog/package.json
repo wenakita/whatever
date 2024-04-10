@@ -8,8 +8,9 @@
   },
   "dependencies": {
     "@hono/node-server": "^1",
+    "frog": "latest",
     "hono": "^4",
-    "frog": "latest"
+    "nodemon": "^3.1.0"
   },
   "devDependencies": {
     "@types/node": "^20.11.17",
