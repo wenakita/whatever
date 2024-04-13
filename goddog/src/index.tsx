@@ -93,22 +93,52 @@ export const app = new Frog({
         ],
       });
     } else if (buttonValue === "previous") {
-      c.res({
+      return c.res({
+        image: (
+          <Rows backgroundColor="background" padding="32">
+            <Row height="3/4" alignVertical="bottom">
+              <Heading>GodDog 🐕</Heading>
+              <Text color="text200" size="20">
+                the future of memecoins
+              </Text>
+            </Row>
+            <Row
+              height="0.5/4"
+              border={"gray"}
+              borderBottom={"none"}
+              borderRight={"none"}
+              borderLeft={"none"}
+              alignVertical="bottom"
+            >
+              <Text size={"15"}>Made with 🐸</Text>
+            </Row>
+          </Rows>
+        ),
         action: "/",
+        intents: [
+          <Button value="previous">⏪</Button>,
+          <Button.Link href="https://t.me/+eLttcj65I-1jNjRh">
+            Socials
+          </Button.Link>,
+          <Button.Link href="https://interchain.axelar.dev/base/0xDDf7d080C82b8048BAAe54e376a3406572429b4e">
+            Interchain
+          </Button.Link>,
+          <Button value="next">⏩</Button>,
+        ],
       });
     }
     return c.res({
       image: (
         <Rows backgroundColor={"background"}>
           <Row alignVertical="center">
-            <Text>Unkown Error: 404 </Text>
+            <Text>Unknown Error: 404 </Text>
           </Row>
         </Rows>
       ),
       intents: [<Button.Reset>Reset</Button.Reset>],
     });
   })
-  .frame("goddog/1", (c) => {
+  .frame("/goddog/1", (c) => {
     const { buttonValue } = c;
     if (buttonValue === "next") {
       return c.res({
@@ -149,41 +179,48 @@ export const app = new Frog({
       });
     } else if (buttonValue === "previous") {
       return c.res({
+        image: (
+          <Rows backgroundColor="background" padding="32">
+            <Row height="3/4" alignVertical="bottom">
+              <Heading>GodDog 🐕</Heading>
+              <Text color="text200" size="20">
+                the future of memecoins
+              </Text>
+            </Row>
+            <Row
+              height="0.5/4"
+              border={"gray"}
+              borderBottom={"none"}
+              borderRight={"none"}
+              borderLeft={"none"}
+              alignVertical="bottom"
+            >
+              <Text size={"15"}>Made with 🐸</Text>
+            </Row>
+          </Rows>
+        ),
         action: "/goddog",
+        intents: [
+          <Button value="previous">⏪</Button>,
+          <Button.Link href="https://t.me/+eLttcj65I-1jNjRh">
+            Socials
+          </Button.Link>,
+          <Button.Link href="https://interchain.axelar.dev/base/0xDDf7d080C82b8048BAAe54e376a3406572429b4e">
+            Interchain
+          </Button.Link>,
+          <Button value="next">⏩</Button>,
+        ],
       });
     }
-
     return c.res({
       image: (
-        <Rows backgroundColor="background" padding="32">
-          <Row height="3/4" alignVertical="center">
-            <Text color="text200" size="18">
-              ERROR: 404
-            </Text>
-          </Row>
-          <Row
-            height="0.5/4"
-            border={"gray"}
-            borderBottom={"none"}
-            borderRight={"none"}
-            borderLeft={"none"}
-            alignVertical="bottom"
-          >
-            <Text size={"15"}>GodDog 🐕</Text>
+        <Rows backgroundColor={"background"}>
+          <Row alignVertical="center">
+            <Text>Unknown Error: 404 </Text>
           </Row>
         </Rows>
       ),
-      action: "/",
-      intents: [
-        <Button value="previous">⏪</Button>,
-        <Button.Link href="https://t.me/+eLttcj65I-1jNjRh">
-          Socials
-        </Button.Link>,
-        <Button.Link href="https://interchain.axelar.dev/base/0xDDf7d080C82b8048BAAe54e376a3406572429b4e">
-          Interchain
-        </Button.Link>,
-        <Button value="next">⏩</Button>,
-      ],
+      intents: [<Button.Reset>Reset</Button.Reset>],
     });
   })
   .frame("/goddog/2", (c) => {
@@ -209,10 +246,42 @@ export const app = new Frog({
       });
     } else if (buttonValue === "previous") {
       return c.res({
+        image: (
+          <Rows backgroundColor="background" padding="32">
+            <Row height="3/4" alignVertical="center">
+              <Text color="text200" size="18">
+                When Hermes DeFi Token V2 launches, it will introduce unified
+                liquidity, streamlining access to liquidity pools across various
+                decentralized finance protocols. This integration ensures
+                seamless interoperability and maximizes efficiency for users,
+                fostering a more fluid and interconnected DeFi ecosystem.
+              </Text>
+            </Row>
+            <Row
+              height="0.5/4"
+              border={"gray"}
+              borderBottom={"none"}
+              borderRight={"none"}
+              borderLeft={"none"}
+              alignVertical="bottom"
+            >
+              <Text size={"15"}>GodDog 🐕</Text>
+            </Row>
+          </Rows>
+        ),
         action: "/goddog/1",
+        intents: [
+          <Button value="previous">⏪</Button>,
+          <Button.Link href="https://t.me/+eLttcj65I-1jNjRh">
+            Socials
+          </Button.Link>,
+          <Button.Link href="https://interchain.axelar.dev/base/0xDDf7d080C82b8048BAAe54e376a3406572429b4e">
+            Interchain
+          </Button.Link>,
+          <Button value="next">⏩</Button>,
+        ],
       });
     }
-
     return c.res({
       image: (
         <Box>
