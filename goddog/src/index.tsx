@@ -11,6 +11,7 @@ import {
   Row,
   Columns,
   Column,
+  Image,
 } from "./ui.js";
 import { serveStatic } from "frog/serve-static";
 
@@ -134,7 +135,7 @@ export const app = new Frog({
             </Row>
           </Rows>
         ),
-        action: "/",
+        action: "/goddog/2",
         intents: [
           <Button value="previous">⏪</Button>,
           <Button.Link href="https://t.me/+eLttcj65I-1jNjRh">
@@ -171,6 +172,52 @@ export const app = new Frog({
             <Text size={"15"}>GodDog 🐕</Text>
           </Row>
         </Rows>
+      ),
+      action: "/",
+      intents: [
+        <Button value="previous">⏪</Button>,
+        <Button.Link href="https://t.me/+eLttcj65I-1jNjRh">
+          Socials
+        </Button.Link>,
+        <Button.Link href="https://interchain.axelar.dev/base/0xDDf7d080C82b8048BAAe54e376a3406572429b4e">
+          Interchain
+        </Button.Link>,
+        <Button value="next">⏩</Button>,
+      ],
+    });
+  })
+  .frame("/goddog/2", (c) => {
+    const { buttonValue } = c;
+    if (buttonValue === "next") {
+      return c.res({
+        image: (
+          <Box>
+            <Image src="/slide1.png" />
+          </Box>
+        ),
+        action: "/",
+        intents: [
+          <Button value="previous">⏪</Button>,
+          <Button.Link href="https://t.me/+eLttcj65I-1jNjRh">
+            Socials
+          </Button.Link>,
+          <Button.Link href="https://interchain.axelar.dev/base/0xDDf7d080C82b8048BAAe54e376a3406572429b4e">
+            Interchain
+          </Button.Link>,
+          <Button value="next">⏩</Button>,
+        ],
+      });
+    } else if (buttonValue === "previous") {
+      return c.res({
+        action: "/goddog/1",
+      });
+    }
+
+    return c.res({
+      image: (
+        <Box>
+          <Image src="/slide1.png" />
+        </Box>
       ),
       action: "/",
       intents: [
