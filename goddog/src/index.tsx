@@ -165,7 +165,7 @@ export const app = new Frog({
             </Row>
           </Rows>
         ),
-        action: "/goddog/2",
+        action: "/",
         intents: [
           <Button value="previous">⏪</Button>,
           <Button.Link href="https://t.me/+eLttcj65I-1jNjRh">
@@ -221,84 +221,6 @@ export const app = new Frog({
         </Rows>
       ),
       intents: [<Button.Reset>Reset</Button.Reset>],
-    });
-  })
-  .frame("/goddog/2", (c) => {
-    const { buttonValue } = c;
-    if (buttonValue === "next") {
-      return c.res({
-        image: (
-          <Box>
-            <Image src="/slide1.png" />
-          </Box>
-        ),
-        action: "/",
-        intents: [
-          <Button value="previous">⏪</Button>,
-          <Button.Link href="https://t.me/+eLttcj65I-1jNjRh">
-            Socials
-          </Button.Link>,
-          <Button.Link href="https://interchain.axelar.dev/base/0xDDf7d080C82b8048BAAe54e376a3406572429b4e">
-            Interchain
-          </Button.Link>,
-          <Button value="next">⏩</Button>,
-        ],
-      });
-    } else if (buttonValue === "previous") {
-      return c.res({
-        image: (
-          <Rows backgroundColor="background" padding="32">
-            <Row height="3/4" alignVertical="center">
-              <Text color="text200" size="18">
-                When Hermes DeFi Token V2 launches, it will introduce unified
-                liquidity, streamlining access to liquidity pools across various
-                decentralized finance protocols. This integration ensures
-                seamless interoperability and maximizes efficiency for users,
-                fostering a more fluid and interconnected DeFi ecosystem.
-              </Text>
-            </Row>
-            <Row
-              height="0.5/4"
-              border={"gray"}
-              borderBottom={"none"}
-              borderRight={"none"}
-              borderLeft={"none"}
-              alignVertical="bottom"
-            >
-              <Text size={"15"}>GodDog 🐕</Text>
-            </Row>
-          </Rows>
-        ),
-        action: "/goddog/1",
-        intents: [
-          <Button value="previous">⏪</Button>,
-          <Button.Link href="https://t.me/+eLttcj65I-1jNjRh">
-            Socials
-          </Button.Link>,
-          <Button.Link href="https://interchain.axelar.dev/base/0xDDf7d080C82b8048BAAe54e376a3406572429b4e">
-            Interchain
-          </Button.Link>,
-          <Button value="next">⏩</Button>,
-        ],
-      });
-    }
-    return c.res({
-      image: (
-        <Box>
-          <Image src="/goddog/public/slide1.png" />
-        </Box>
-      ),
-      action: "/",
-      intents: [
-        <Button value="previous">⏪</Button>,
-        <Button.Link href="https://t.me/+eLttcj65I-1jNjRh">
-          Socials
-        </Button.Link>,
-        <Button.Link href="https://interchain.axelar.dev/base/0xDDf7d080C82b8048BAAe54e376a3406572429b4e">
-          Interchain
-        </Button.Link>,
-        <Button value="next">⏩</Button>,
-      ],
     });
   });
 
