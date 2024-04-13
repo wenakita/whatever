@@ -17,6 +17,7 @@ import { serveStatic } from "frog/serve-static";
 import { config } from "dotenv";
 config();
 const port = process.env.PORT;
+const host = process.env.HOST;
 export const app = new Frog({
   ui: { vars },
 })
@@ -194,4 +195,5 @@ devtools(app, { serveStatic });
 serve({
   fetch: app.fetch,
   port: port || 3000,
+  hostname: host || "localhost",
 });
