@@ -14,7 +14,8 @@ import {
   Image,
 } from "./ui.js";
 import { serveStatic } from "frog/serve-static";
-
+import { config } from "dotenv";
+config();
 export const app = new Frog({
   ui: { vars },
 })
@@ -93,52 +94,22 @@ export const app = new Frog({
         ],
       });
     } else if (buttonValue === "previous") {
-      return c.res({
-        image: (
-          <Rows backgroundColor="background" padding="32">
-            <Row height="3/4" alignVertical="bottom">
-              <Heading>GodDog 🐕</Heading>
-              <Text color="text200" size="20">
-                the future of memecoins
-              </Text>
-            </Row>
-            <Row
-              height="0.5/4"
-              border={"gray"}
-              borderBottom={"none"}
-              borderRight={"none"}
-              borderLeft={"none"}
-              alignVertical="bottom"
-            >
-              <Text size={"15"}>Made with 🐸</Text>
-            </Row>
-          </Rows>
-        ),
+      c.res({
         action: "/",
-        intents: [
-          <Button value="previous">⏪</Button>,
-          <Button.Link href="https://t.me/+eLttcj65I-1jNjRh">
-            Socials
-          </Button.Link>,
-          <Button.Link href="https://interchain.axelar.dev/base/0xDDf7d080C82b8048BAAe54e376a3406572429b4e">
-            Interchain
-          </Button.Link>,
-          <Button value="next">⏩</Button>,
-        ],
       });
     }
     return c.res({
       image: (
         <Rows backgroundColor={"background"}>
           <Row alignVertical="center">
-            <Text>Unknown Error: 404 </Text>
+            <Text>Unkown Error: 404 </Text>
           </Row>
         </Rows>
       ),
       intents: [<Button.Reset>Reset</Button.Reset>],
     });
   })
-  .frame("/goddog/1", (c) => {
+  .frame("goddog/1", (c) => {
     const { buttonValue } = c;
     if (buttonValue === "next") {
       return c.res({
@@ -179,48 +150,41 @@ export const app = new Frog({
       });
     } else if (buttonValue === "previous") {
       return c.res({
-        image: (
-          <Rows backgroundColor="background" padding="32">
-            <Row height="3/4" alignVertical="bottom">
-              <Heading>GodDog 🐕</Heading>
-              <Text color="text200" size="20">
-                the future of memecoins
-              </Text>
-            </Row>
-            <Row
-              height="0.5/4"
-              border={"gray"}
-              borderBottom={"none"}
-              borderRight={"none"}
-              borderLeft={"none"}
-              alignVertical="bottom"
-            >
-              <Text size={"15"}>Made with 🐸</Text>
-            </Row>
-          </Rows>
-        ),
         action: "/goddog",
-        intents: [
-          <Button value="previous">⏪</Button>,
-          <Button.Link href="https://t.me/+eLttcj65I-1jNjRh">
-            Socials
-          </Button.Link>,
-          <Button.Link href="https://interchain.axelar.dev/base/0xDDf7d080C82b8048BAAe54e376a3406572429b4e">
-            Interchain
-          </Button.Link>,
-          <Button value="next">⏩</Button>,
-        ],
       });
     }
+
     return c.res({
       image: (
-        <Rows backgroundColor={"background"}>
-          <Row alignVertical="center">
-            <Text>Unknown Error: 404 </Text>
+        <Rows backgroundColor="background" padding="32">
+          <Row height="3/4" alignVertical="center">
+            <Text color="text200" size="18">
+              ERROR: 404
+            </Text>
+          </Row>
+          <Row
+            height="0.5/4"
+            border={"gray"}
+            borderBottom={"none"}
+            borderRight={"none"}
+            borderLeft={"none"}
+            alignVertical="bottom"
+          >
+            <Text size={"15"}>GodDog 🐕</Text>
           </Row>
         </Rows>
       ),
-      intents: [<Button.Reset>Reset</Button.Reset>],
+      action: "/",
+      intents: [
+        <Button value="previous">⏪</Button>,
+        <Button.Link href="https://t.me/+eLttcj65I-1jNjRh">
+          Socials
+        </Button.Link>,
+        <Button.Link href="https://interchain.axelar.dev/base/0xDDf7d080C82b8048BAAe54e376a3406572429b4e">
+          Interchain
+        </Button.Link>,
+        <Button value="next">⏩</Button>,
+      ],
     });
   });
 
@@ -228,5 +192,5 @@ devtools(app, { serveStatic });
 
 serve({
   fetch: app.fetch,
-  port: 3000,
+  port: process.env.PORT,
 });
