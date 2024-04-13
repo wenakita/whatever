@@ -45,12 +45,7 @@ export const app = new Frog({
       action: "/goddog",
       intents: [
         <Button value="previous">⏪</Button>,
-        <Button.Link href="https://t.me/+eLttcj65I-1jNjRh">
-          Socials
-        </Button.Link>,
-        <Button.Link href="https://interchain.axelar.dev/base/0xDDf7d080C82b8048BAAe54e376a3406572429b4e">
-          Interchain
-        </Button.Link>,
+        <Button.Link href="https://linktr.ee/goddog69">Socials</Button.Link>,
         <Button value="next">⏩</Button>,
       ],
     });
@@ -64,7 +59,7 @@ export const app = new Frog({
           <Rows backgroundColor="background" padding="32">
             <Row height="3/4" alignVertical="center">
               <Text color="text200" size="24">
-                GodDog ($OOOooo) is an omnichain cryptocurrency, offering
+                GodDog ($oooOOO) is an omnichain cryptocurrency, offering
                 enhanced scalability, interoperability, and resilience across
                 multiple blockchains, ensuring broader accessibility and a more
                 robust decentralized ecosystem.
@@ -85,12 +80,7 @@ export const app = new Frog({
         action: "/goddog/1",
         intents: [
           <Button value="previous">⏪</Button>,
-          <Button.Link href="https://t.me/+eLttcj65I-1jNjRh">
-            Socials
-          </Button.Link>,
-          <Button.Link href="https://interchain.axelar.dev/base/0xDDf7d080C82b8048BAAe54e376a3406572429b4e">
-            Interchain
-          </Button.Link>,
+          <Button.Link href="https://linktr.ee/goddog69">Socials</Button.Link>,
           <Button value="next">⏩</Button>,
         ],
       });
@@ -140,12 +130,7 @@ export const app = new Frog({
         action: "/",
         intents: [
           <Button value="previous">⏪</Button>,
-          <Button.Link href="https://t.me/+eLttcj65I-1jNjRh">
-            Socials
-          </Button.Link>,
-          <Button.Link href="https://interchain.axelar.dev/base/0xDDf7d080C82b8048BAAe54e376a3406572429b4e">
-            Interchain
-          </Button.Link>,
+          <Button.Link href="https://linktr.ee/goddog69">Socials</Button.Link>,
           <Button value="next">⏩</Button>,
         ],
       });
@@ -178,12 +163,7 @@ export const app = new Frog({
       action: "/",
       intents: [
         <Button value="previous">⏪</Button>,
-        <Button.Link href="https://t.me/+eLttcj65I-1jNjRh">
-          Socials
-        </Button.Link>,
-        <Button.Link href="https://interchain.axelar.dev/base/0xDDf7d080C82b8048BAAe54e376a3406572429b4e">
-          Interchain
-        </Button.Link>,
+        <Button.Link href="https://linktr.ee/goddog69">Socials</Button.Link>,
         <Button value="next">⏩</Button>,
       ],
     });
