@@ -285,7 +285,7 @@ export const app = new Frog({
     return c.res({
       image: (
         <Box>
-          <Image src="/slide1.png" />
+          <Image src="/goddog/public/slide1.png" />
         </Box>
       ),
       action: "/",
